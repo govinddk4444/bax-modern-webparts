@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "bax-modern-webparts-client-side-solution",
+    "id": "7a9f9340-4407-41b1-bf6a-e6db13e1c77e",
+    "version": "1.0.0.0"
+  },
+  "paths": {
+    "zippedPackage": "solution/bax-modern-webparts.sppkg"
+  }
+}

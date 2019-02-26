@@ -1,0 +1,11 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "isCreatingSolution": false,
+    "environment": "onprem",
+    "version": "1.7.1",
+    "libraryName": "bax-modern-webparts",
+    "libraryId": "7a9f9340-4407-41b1-bf6a-e6db13e1c77e",
+    "packageManager": "npm",
+    "componentType": "webpart"
+  }
+}
