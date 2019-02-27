@@ -1,0 +1,39 @@
+# Node.js with React
+# Build a Node.js project that uses React.
+# Add steps that analyze code, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
+
+trigger:
+- master
+
+pool:
+  vmImage: 'Ubuntu-16.04'
+
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '8.x'
+  displayName: 'Install Node.js'
+
+- script: |
+    npm install
+    npm test
+  displayName: 'npm install and test'
+
+- script: |
+    gulp clean
+    gulp bundle
+    gulp package-solution
+  displayName: 'Build and package the solution'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    pathtoPublish: '$(Build.SourcesDirectory)/sharepoint/solution/bax-modern-webparts.sppkg'
+    artifactName: 'SPFx sppkg'
+  displayName: 'Publish build SPFx artifacts'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    pathtoPublish: '$(Build.SourcesDirectory)/devops/release'
+    artifactName: 'SPFx sppkg'
+  displayName: 'Publish build office 365 CLI artifacts'
