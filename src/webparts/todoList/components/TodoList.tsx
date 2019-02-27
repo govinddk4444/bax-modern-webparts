@@ -106,7 +106,7 @@ export default class TodoList extends React.Component<ITodoListProps, any> {
             />
             <Route
               exact
-              path="/Todo"
+              path="/Todo List"
               render={props => (
                 <div>
                   <AddTodo addTodo={this.addTodo} />
