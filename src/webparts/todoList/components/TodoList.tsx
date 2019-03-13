@@ -17,7 +17,8 @@ export default class TodoList extends React.Component<ITodoListProps, any> {
   constructor(props: ITodoListProps, state: any) {
     super(props, state);
     this.state = {
-      todos: []
+      todos: [],
+      taskTrackerList: this.props.taskTrackerList
     };
   }
 
@@ -28,7 +29,7 @@ export default class TodoList extends React.Component<ITodoListProps, any> {
         if (todo.id === id) {
           todo.completed = !todo.completed;
           pnp.sp.web.lists
-            .getByTitle("Todo List Tracker")
+            .getByTitle(this.state.taskTrackerList)
             .items.getById(id)
             .update({
               Completed: todo.completed
@@ -45,7 +46,7 @@ export default class TodoList extends React.Component<ITodoListProps, any> {
       todos: [...this.state.todos.filter(todo => todo.id !== id)]
     });
     pnp.sp.web.lists
-      .getByTitle("Todo List Tracker")
+      .getByTitle(this.state.taskTrackerList)
       .items.getById(id)
       .delete();
   };
@@ -57,7 +58,7 @@ export default class TodoList extends React.Component<ITodoListProps, any> {
       completed: false
     };
     pnp.sp.web.lists
-      .getByTitle("Todo List Tracker")
+      .getByTitle(this.state.taskTrackerList)
       .items.add({
         Title: newTodo.title,
         Completed: newTodo.completed
@@ -74,9 +75,10 @@ export default class TodoList extends React.Component<ITodoListProps, any> {
       });
   };
 
+  /** On Mounting the component */
   public componentDidMount(): void {
     pnp.sp.web.lists
-      .getByTitle("Todo List Tracker")
+      .getByTitle(this.state.taskTrackerList)
       .items.select("Title", "Completed", "ID", "Author/Id")
       .expand("Author")
       .filter("Author/Id eq " + this.props.currentUserId)
@@ -103,10 +105,11 @@ export default class TodoList extends React.Component<ITodoListProps, any> {
             <Header
               webPartTitle={this.props.webPartTitle}
               description={escape(this.props.description)}
+              currentSiteRelativeUrl={this.props.currentSiteRelativeUrl}
             />
             <Route
               exact
-              path="/Todo List"
+              path={this.props.currentSiteRelativeUrl}
               render={props => (
                 <div>
                   <AddTodo addTodo={this.addTodo} />
@@ -118,7 +121,10 @@ export default class TodoList extends React.Component<ITodoListProps, any> {
                 </div>
               )}
             />
-            <Route path="/about" component={About} />
+            <Route
+              path={this.props.currentSiteRelativeUrl + "/about"}
+              component={About}
+            />
           </div>
         </div>
       </Router>

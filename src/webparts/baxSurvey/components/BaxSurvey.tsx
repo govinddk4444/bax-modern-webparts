@@ -1,12 +1,12 @@
 import * as React from 'react';
-import styles from './DocumentCard.module.scss';
-import { IDocumentCardProps } from './IDocumentCardProps';
+import styles from './BaxSurvey.module.scss';
+import { IBaxSurveyProps } from './IBaxSurveyProps';
 import { escape } from '@microsoft/sp-lodash-subset';
 
-export default class DocumentCard extends React.Component<IDocumentCardProps, {}> {
-  public render(): React.ReactElement<IDocumentCardProps> {
+export default class BaxSurvey extends React.Component<IBaxSurveyProps, {}> {
+  public render(): React.ReactElement<IBaxSurveyProps> {
     return (
-      <div className={ styles.documentCard }>
+      <div className={ styles.baxSurvey }>
         <div className={ styles.container }>
           <div className={ styles.row }>
             <div className={ styles.column }>

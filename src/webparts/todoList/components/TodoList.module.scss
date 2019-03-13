@@ -75,11 +75,13 @@
   }
 
   .header {
+    @include ms-font-l;
     background: "#333";
     color: "#fff";
     text-align: "center";
     padding: "10px";
     .subHeader {
+      @include ms-font-l;
       color: black;
     }
   }
@@ -97,6 +99,7 @@
   }
 
   .addTodoStyle {
+    @include ms-font-m;
     padding: 5px;
     display: flex;
   }

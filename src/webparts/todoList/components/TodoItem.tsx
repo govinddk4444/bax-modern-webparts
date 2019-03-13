@@ -26,6 +26,7 @@ export class TodoItem extends React.Component<any, {}> {
           <input
             type="checkbox"
             onChange={this.props.toggleComplete.bind(this, id)}
+            defaultChecked={this.props.todo.completed}
           />{" "}
           {title}
           <DefaultButton

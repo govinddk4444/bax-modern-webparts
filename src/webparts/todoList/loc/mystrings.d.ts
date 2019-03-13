@@ -3,6 +3,7 @@ declare interface ITodoListWebPartStrings {
   BasicGroupName: string;
   DescriptionFieldLabel: string;
   WebPartTitleFieldLabel: string;
+  TaskListFieldLabel: string;
 }
 
 declare module "TodoListWebPartStrings" {

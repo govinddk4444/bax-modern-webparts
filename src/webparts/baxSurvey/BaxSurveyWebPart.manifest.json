@@ -1,7 +1,7 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-web-part-manifest.schema.json",
-  "id": "6877fb27-656a-48c1-b61d-74b2f868da09",
-  "alias": "HraCalculatorWebPart",
+  "id": "f9b7d2d7-7a55-438e-afaa-bc4b8dce5b9a",
+  "alias": "BaxSurveyWebPart",
   "componentType": "WebPart",
 
   // The "*" signifies that the version should be taken from the package.json
@@ -16,11 +16,11 @@
   "preconfiguredEntries": [{
     "groupId": "5c03119e-3074-46fd-976b-c60198311f70", // Other
     "group": { "default": "Other" },
-    "title": { "default": "hra-calculator" },
-    "description": { "default": "hra-calculator description" },
+    "title": { "default": "bax-survey" },
+    "description": { "default": "bax-survey description" },
     "officeFabricIconFontName": "Page",
     "properties": {
-      "description": "hra-calculator"
+      "description": "bax-survey"
     }
   }]
 }

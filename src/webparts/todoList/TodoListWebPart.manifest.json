@@ -21,8 +21,9 @@
       "description": { "default": "todo-list description" },
       "officeFabricIconFontName": "Page",
       "properties": {
-        "description": "Enter your Todo-List",
-        "title": "Todo List"
+        "description": "",
+        "title": "Todo List",
+        "taskList": "Todo List Tracker"
       }
     }
   ]

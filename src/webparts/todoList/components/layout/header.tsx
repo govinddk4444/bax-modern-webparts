@@ -9,11 +9,17 @@ export class Header extends React.Component<any, {}> {
       <div>
         <header className={styles.header}>
           <h1>{this.props.webPartTitle}</h1>
-          <Link to="/" className={styles.linkStyle}>
+          <Link
+            to={this.props.currentSiteRelativeUrl}
+            className={styles.linkStyle}
+          >
             Open Todo List
           </Link>{" "}
           |{" "}
-          <Link className={styles.linkStyle} to="/about">
+          <Link
+            className={styles.linkStyle}
+            to={this.props.currentSiteRelativeUrl + "/about"}
+          >
             About
           </Link>
           <p className={styles.subHeader}>{this.props.description}</p>

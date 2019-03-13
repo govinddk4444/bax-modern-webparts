@@ -14,7 +14,7 @@ import { ITodoListProps } from "./components/ITodoListProps";
 export interface ITodoListWebPartProps {
   description: string;
   title: string;
-  spfxCtx;
+  taskList: string | string[];
 }
 
 export default class TodoListWebPart extends BaseClientSideWebPart<
@@ -34,7 +34,11 @@ export default class TodoListWebPart extends BaseClientSideWebPart<
       {
         description: this.properties.description,
         webPartTitle: this.properties.title,
-        currentUserId: this.context.pageContext.legacyPageContext["userId"]
+        currentUserId: this.context.pageContext.legacyPageContext["userId"],
+        currentSiteRelativeUrl: this.context.pageContext.legacyPageContext[
+          "siteServerRelativeUrl"
+        ],
+        taskTrackerList: this.properties.taskList
       }
     );
 
@@ -65,6 +69,9 @@ export default class TodoListWebPart extends BaseClientSideWebPart<
                 }),
                 PropertyPaneTextField("description", {
                   label: strings.DescriptionFieldLabel
+                }),
+                PropertyPaneTextField("taskList", {
+                  label: strings.TaskListFieldLabel
                 })
               ]
             }

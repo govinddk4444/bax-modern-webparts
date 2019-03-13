@@ -7,19 +7,19 @@ import {
   PropertyPaneTextField
 } from '@microsoft/sp-webpart-base';
 
-import * as strings from 'HraCalculatorWebPartStrings';
-import HraCalculator from './components/HraCalculator';
-import { IHraCalculatorProps } from './components/IHraCalculatorProps';
+import * as strings from 'BaxSurveyWebPartStrings';
+import BaxSurvey from './components/BaxSurvey';
+import { IBaxSurveyProps } from './components/IBaxSurveyProps';
 
-export interface IHraCalculatorWebPartProps {
+export interface IBaxSurveyWebPartProps {
   description: string;
 }
 
-export default class HraCalculatorWebPart extends BaseClientSideWebPart<IHraCalculatorWebPartProps> {
+export default class BaxSurveyWebPart extends BaseClientSideWebPart<IBaxSurveyWebPartProps> {
 
   public render(): void {
-    const element: React.ReactElement<IHraCalculatorProps > = React.createElement(
-      HraCalculator,
+    const element: React.ReactElement<IBaxSurveyProps > = React.createElement(
+      BaxSurvey,
       {
         description: this.properties.description
       }

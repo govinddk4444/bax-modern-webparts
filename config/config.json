@@ -1,25 +1,19 @@
 {
   "entries": [
     {
-      "entry": "./lib/webparts/hraCalculator/HraCalculatorWebPart.js",
-      "manifest": "./src/webparts/hraCalculator/HraCalculatorWebPart.manifest.json",
-      "outputPath": "./dist/hra-calculator-web-part.js"
-    },
-    {
-      "entry": "./lib/webparts/documentCard/DocumentCardWebPart.js",
-      "manifest": "./src/webparts/documentCard/DocumentCardWebPart.manifest.json",
-      "outputPath": "./dist/document-card-web-part.js"
-    },
-    {
       "entry": "./lib/webparts/todoList/TodoListWebPart.js",
       "manifest": "./src/webparts/todoList/TodoListWebPart.manifest.json",
       "outputPath": "./dist/todo-list-web-part.js"
+    },
+    {
+      "entry": "./lib/webparts/baxSurvey/BaxSurveyWebPart.js",
+      "manifest": "./src/webparts/baxSurvey/BaxSurveyWebPart.manifest.json",
+      "outputPath": "./dist/bax-survey-web-part.js"
     }
   ],
   "externals": {},
   "localizedResources": {
-    "HraCalculatorWebPartStrings": "webparts/hraCalculator/loc/{locale}.js",
-    "DocumentCardWebPartStrings": "webparts/documentCard/loc/{locale}.js",
-    "TodoListWebPartStrings": "webparts/todoList/loc/{locale}.js"
+    "TodoListWebPartStrings": "webparts/todoList/loc/{locale}.js",
+    "BaxSurveyWebPartStrings": "webparts/baxSurvey/loc/{locale}.js"
   }
 }
